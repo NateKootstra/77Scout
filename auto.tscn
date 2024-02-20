@@ -1,0 +1,315 @@
+[gd_scene load_steps=18 format=3 uid="uid://c5r7sfyy2bpms"]
+
+[ext_resource type="Texture2D" uid="uid://dp62xrdpw0d8a" path="res://icon.png" id="1_hfha5"]
+[ext_resource type="Script" path="res://Counter.gd" id="2_5858d"]
+[ext_resource type="Script" path="res://Checkbox.gd" id="2_h301d"]
+[ext_resource type="Texture2D" uid="uid://c4gut6idauydw" path="res://minus.png" id="3_6rm82"]
+[ext_resource type="Texture2D" uid="uid://cy3vnfdxepair" path="res://plus.png" id="4_dye0j"]
+[ext_resource type="Texture2D" uid="uid://cfafj01gymle6" path="res://Button.png" id="6_fx8sy"]
+[ext_resource type="Script" path="res://Next.gd" id="8_acuka"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wsxps"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r8ej2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gr6u0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sq2li"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_surkx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8cbbu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oifit"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_egd7m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hom5w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3d6vp"]
+
+[node name="auto" type="Node2D"]
+
+[node name="Menu" type="Node2D" parent="."]
+
+[node name="Title" type="RichTextLabel" parent="Menu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 85.0
+offset_right = 1080.0
+offset_bottom = 245.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[center]Auto"
+scroll_active = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Left Starting Area" type="Node2D" parent="Menu"]
+position = Vector2(0, 350)
+
+[node name="Title" type="RichTextLabel" parent="Menu/Left Starting Area"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1080.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]Left Starting Area?"
+scroll_active = false
+
+[node name="Left Starting Area" type="Button" parent="Menu/Left Starting Area"]
+offset_left = 412.5
+offset_top = 100.0
+offset_right = 1444.5
+offset_bottom = 1132.0
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 500
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wsxps")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r8ej2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gr6u0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sq2li")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_surkx")
+icon = ExtResource("1_hfha5")
+icon_alignment = 1
+script = ExtResource("2_h301d")
+
+[node name="Amp Notes" type="Node2D" parent="Menu"]
+position = Vector2(0, 750)
+script = ExtResource("2_5858d")
+
+[node name="Title" type="RichTextLabel" parent="Menu/Amp Notes"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1080.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]Amp Notes"
+scroll_active = false
+
+[node name="Minus" type="Button" parent="Menu/Amp Notes"]
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 1132.0
+offset_bottom = 1132.0
+scale = Vector2(0.25, 0.25)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wsxps")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r8ej2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gr6u0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sq2li")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_surkx")
+icon = ExtResource("3_6rm82")
+
+[node name="Number" type="Button" parent="Menu/Amp Notes"]
+offset_left = 412.5
+offset_top = 100.0
+offset_right = 1444.5
+offset_bottom = 1132.0
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_color = Color(0.627451, 0.305882, 0.141176, 1)
+theme_override_font_sizes/font_size = 500
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wsxps")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r8ej2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gr6u0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sq2li")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_surkx")
+toggle_mode = true
+button_pressed = true
+button_mask = 4
+text = "0"
+icon = ExtResource("1_hfha5")
+icon_alignment = 1
+
+[node name="Plus" type="Button" parent="Menu/Amp Notes"]
+offset_left = 725.0
+offset_top = 100.0
+offset_right = 1757.0
+offset_bottom = 1132.0
+scale = Vector2(0.25, 0.25)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wsxps")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r8ej2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gr6u0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sq2li")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_surkx")
+icon = ExtResource("4_dye0j")
+
+[node name="Speaker Notes" type="Node2D" parent="Menu"]
+position = Vector2(0, 1150)
+script = ExtResource("2_5858d")
+
+[node name="Title" type="RichTextLabel" parent="Menu/Speaker Notes"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1080.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]Speaker Notes"
+scroll_active = false
+
+[node name="Minus" type="Button" parent="Menu/Speaker Notes"]
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 1132.0
+offset_bottom = 1132.0
+scale = Vector2(0.25, 0.25)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8cbbu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oifit")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_egd7m")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hom5w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3d6vp")
+icon = ExtResource("3_6rm82")
+
+[node name="Number" type="Button" parent="Menu/Speaker Notes"]
+offset_left = 412.5
+offset_top = 100.0
+offset_right = 1444.5
+offset_bottom = 1132.0
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_color = Color(0.627451, 0.305882, 0.141176, 1)
+theme_override_font_sizes/font_size = 500
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8cbbu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oifit")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_egd7m")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hom5w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3d6vp")
+toggle_mode = true
+button_pressed = true
+button_mask = 4
+text = "0"
+icon = ExtResource("1_hfha5")
+icon_alignment = 1
+
+[node name="Plus" type="Button" parent="Menu/Speaker Notes"]
+offset_left = 725.0
+offset_top = 100.0
+offset_right = 1757.0
+offset_bottom = 1132.0
+scale = Vector2(0.25, 0.25)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8cbbu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oifit")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_egd7m")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hom5w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3d6vp")
+icon = ExtResource("4_dye0j")
+
+[node name="Starting Location" type="Node2D" parent="Menu"]
+position = Vector2(0, 1550)
+script = ExtResource("2_5858d")
+
+[node name="Title" type="RichTextLabel" parent="Menu/Starting Location"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1080.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]Starting Location"
+scroll_active = false
+
+[node name="Minus" type="Button" parent="Menu/Starting Location"]
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 1132.0
+offset_bottom = 1132.0
+scale = Vector2(0.25, 0.25)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wsxps")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r8ej2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gr6u0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sq2li")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_surkx")
+icon = ExtResource("3_6rm82")
+
+[node name="Number" type="Button" parent="Menu/Starting Location"]
+offset_left = 412.5
+offset_top = 100.0
+offset_right = 1444.5
+offset_bottom = 1132.0
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_color = Color(0.627451, 0.305882, 0.141176, 1)
+theme_override_font_sizes/font_size = 300
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wsxps")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r8ej2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gr6u0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sq2li")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_surkx")
+toggle_mode = true
+button_pressed = true
+button_mask = 4
+text = "Center"
+icon = ExtResource("1_hfha5")
+icon_alignment = 1
+
+[node name="Plus" type="Button" parent="Menu/Starting Location"]
+offset_left = 725.0
+offset_top = 100.0
+offset_right = 1757.0
+offset_bottom = 1132.0
+scale = Vector2(0.25, 0.25)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wsxps")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r8ej2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gr6u0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sq2li")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_surkx")
+icon = ExtResource("4_dye0j")
+
+[node name="Back" type="Button" parent="Menu"]
+offset_left = 240.0
+offset_top = 2000.0
+offset_right = 4344.0
+offset_bottom = 3032.0
+scale = Vector2(0.15, 0.15)
+theme_override_font_sizes/font_size = 500
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wsxps")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r8ej2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gr6u0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sq2li")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_surkx")
+text = "Back"
+icon = ExtResource("6_fx8sy")
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Next" type="Button" parent="Menu"]
+offset_left = 240.0
+offset_top = 2185.0
+offset_right = 4344.0
+offset_bottom = 3217.0
+scale = Vector2(0.15, 0.15)
+theme_override_font_sizes/font_size = 500
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wsxps")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r8ej2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gr6u0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sq2li")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_surkx")
+text = "Next"
+icon = ExtResource("6_fx8sy")
+icon_alignment = 1
+script = ExtResource("8_acuka")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Menu/Left Starting Area/Left Starting Area" to="Menu/Left Starting Area/Left Starting Area" method="_on_pressed"]
+[connection signal="pressed" from="Menu/Amp Notes/Minus" to="Menu/Amp Notes" method="_decrease"]
+[connection signal="pressed" from="Menu/Amp Notes/Plus" to="Menu/Amp Notes" method="_increase"]
+[connection signal="pressed" from="Menu/Speaker Notes/Minus" to="Menu/Speaker Notes" method="_decrease"]
+[connection signal="pressed" from="Menu/Speaker Notes/Plus" to="Menu/Speaker Notes" method="_increase"]
+[connection signal="pressed" from="Menu/Starting Location/Minus" to="Menu/Starting Location" method="_decrease"]
+[connection signal="pressed" from="Menu/Starting Location/Plus" to="Menu/Starting Location" method="_increase"]
+[connection signal="pressed" from="Menu/Back" to="Menu/Next" method="_back"]
+[connection signal="pressed" from="Menu/Next" to="Menu/Next" method="_next"]

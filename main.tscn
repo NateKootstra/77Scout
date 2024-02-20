@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://8781i1f21f82"]
+
+[ext_resource type="Script" path="res://Next.gd" id="1_x3s4d"]
+[ext_resource type="Script" path="res://GoToLocalData.gd" id="2_qtgst"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k7h6p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hfvqq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fv1jg"]
+
+[node name="main" type="Node2D"]
+
+[node name="Menu" type="Node2D" parent="."]
+
+[node name="Title" type="RichTextLabel" parent="Menu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 85.0
+offset_right = 1080.0
+offset_bottom = 245.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[center]772 Scouting Tool"
+scroll_active = false
+
+[node name="Scout Team" type="Button" parent="Menu"]
+offset_top = 285.0
+offset_right = 1080.0
+offset_bottom = 564.0
+theme_override_font_sizes/font_size = 100
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_k7h6p")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hfvqq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fv1jg")
+text = "Scout Team"
+script = ExtResource("1_x3s4d")
+
+[node name="Local Data" type="Button" parent="Menu"]
+offset_top = 600.0
+offset_right = 1080.0
+offset_bottom = 879.0
+theme_override_font_sizes/font_size = 100
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_k7h6p")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hfvqq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fv1jg")
+text = "Local Data"
+script = ExtResource("2_qtgst")
+
+[node name="Settings" type="Node2D" parent="."]
+metadata/WebServer = "Insert We"
+
+[connection signal="pressed" from="Menu/Scout Team" to="Menu/Scout Team" method="_next"]
+[connection signal="pressed" from="Menu/Local Data" to="Menu/Local Data" method="_on_pressed"]

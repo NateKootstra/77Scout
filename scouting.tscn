@@ -1,0 +1,138 @@
+[gd_scene load_steps=9 format=3 uid="uid://cyj4l21a14p7"]
+
+[ext_resource type="Script" path="res://NumberInputs.gd" id="1_gqimk"]
+[ext_resource type="Texture2D" uid="uid://cfafj01gymle6" path="res://Button.png" id="1_h7lod"]
+[ext_resource type="Script" path="res://Next.gd" id="3_x4o3s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_35236"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jgqu7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i2qi7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qix6y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_twwdi"]
+
+[node name="scouting" type="Node2D"]
+
+[node name="Menu" type="Node2D" parent="."]
+script = ExtResource("1_gqimk")
+
+[node name="Title" type="RichTextLabel" parent="Menu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 85.0
+offset_right = 1080.0
+offset_bottom = 245.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[center]Setup"
+scroll_active = false
+
+[node name="Team Number" type="Node2D" parent="Menu"]
+position = Vector2(0, 350)
+
+[node name="Title" type="RichTextLabel" parent="Menu/Team Number"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1080.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]Team Number"
+scroll_active = false
+
+[node name="LineEdit" type="LineEdit" parent="Menu/Team Number"]
+offset_left = 140.0
+offset_top = 100.0
+offset_right = 940.0
+offset_bottom = 300.0
+theme_override_font_sizes/font_size = 50
+placeholder_text = "Enter Team Number Here"
+alignment = 1
+max_length = 5
+context_menu_enabled = false
+virtual_keyboard_type = 2
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Match Number" type="Node2D" parent="Menu"]
+position = Vector2(0, 750)
+
+[node name="Title" type="RichTextLabel" parent="Menu/Match Number"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1080.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]Match Number"
+scroll_active = false
+
+[node name="LineEdit" type="LineEdit" parent="Menu/Match Number"]
+offset_left = 140.0
+offset_top = 100.0
+offset_right = 940.0
+offset_bottom = 300.0
+theme_override_font_sizes/font_size = 50
+placeholder_text = "Enter Match Number Here"
+alignment = 1
+max_length = 3
+context_menu_enabled = false
+virtual_keyboard_type = 2
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Back" type="Button" parent="Menu"]
+offset_left = 240.0
+offset_top = 2000.0
+offset_right = 4344.0
+offset_bottom = 3032.0
+scale = Vector2(0.15, 0.15)
+theme_override_font_sizes/font_size = 500
+theme_override_styles/normal = SubResource("StyleBoxEmpty_35236")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jgqu7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i2qi7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qix6y")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_twwdi")
+text = "Back"
+icon = ExtResource("1_h7lod")
+icon_alignment = 1
+
+[node name="Next" type="Button" parent="Menu"]
+offset_left = 240.0
+offset_top = 2185.0
+offset_right = 4344.0
+offset_bottom = 3217.0
+scale = Vector2(0.15, 0.15)
+theme_override_font_sizes/font_size = 500
+theme_override_styles/normal = SubResource("StyleBoxEmpty_35236")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jgqu7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i2qi7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qix6y")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_twwdi")
+text = "Next"
+icon = ExtResource("1_h7lod")
+icon_alignment = 1
+script = ExtResource("3_x4o3s")
+
+[connection signal="text_changed" from="Menu/Team Number/LineEdit" to="Menu" method="_teamNumber"]
+[connection signal="text_changed" from="Menu/Match Number/LineEdit" to="Menu" method="_matchNumber"]
+[connection signal="pressed" from="Menu/Back" to="Menu/Next" method="_back"]
+[connection signal="pressed" from="Menu/Next" to="Menu/Next" method="_next"]

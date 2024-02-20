@@ -1,0 +1,139 @@
+[gd_scene load_steps=13 format=3 uid="uid://db81jrcmmtuek"]
+
+[ext_resource type="Texture2D" uid="uid://cfafj01gymle6" path="res://Button.png" id="1_7w0lv"]
+[ext_resource type="Script" path="res://Next.gd" id="2_33lbt"]
+[ext_resource type="Script" path="res://comments.gd" id="2_423xv"]
+[ext_resource type="Script" path="res://Done.gd" id="3_bxiy0"]
+[ext_resource type="Texture2D" uid="uid://dp62xrdpw0d8a" path="res://icon.png" id="5_fjhl1"]
+[ext_resource type="Script" path="res://No.gd" id="6_36yfq"]
+[ext_resource type="Script" path="res://Yes.gd" id="7_jug8k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x7bd2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rdx6v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l54fa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yvevf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xa0f0"]
+
+[node name="comments" type="Node2D"]
+
+[node name="Menu" type="Node2D" parent="."]
+
+[node name="Title" type="RichTextLabel" parent="Menu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 85.0
+offset_right = 1080.0
+offset_bottom = 245.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[center]Comments"
+scroll_active = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Button" parent="Menu"]
+offset_left = 240.0
+offset_top = 2000.0
+offset_right = 4344.0
+offset_bottom = 3032.0
+scale = Vector2(0.15, 0.15)
+theme_override_font_sizes/font_size = 500
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x7bd2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rdx6v")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l54fa")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_yvevf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xa0f0")
+text = "Back"
+icon = ExtResource("1_7w0lv")
+icon_alignment = 1
+script = ExtResource("2_33lbt")
+metadata/_edit_use_anchors_ = true
+
+[node name="Done" type="Button" parent="Menu"]
+offset_left = 240.0
+offset_top = 2185.0
+offset_right = 4344.0
+offset_bottom = 3217.0
+scale = Vector2(0.15, 0.15)
+theme_override_font_sizes/font_size = 500
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x7bd2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rdx6v")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l54fa")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_yvevf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xa0f0")
+text = "Done"
+icon = ExtResource("1_7w0lv")
+icon_alignment = 1
+script = ExtResource("3_bxiy0")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="TextEdit" parent="Menu"]
+offset_left = 50.0
+offset_top = 289.0
+offset_right = 1030.0
+offset_bottom = 1836.0
+theme_override_font_sizes/font_size = 50
+placeholder_text = "Enter comments about team..."
+wrap_mode = 1
+script = ExtResource("2_423xv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Menu"]
+visible = false
+position = Vector2(545, 1200)
+texture = ExtResource("5_fjhl1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Menu/Sprite2D"]
+offset_left = -400.0
+offset_top = -382.0
+offset_right = 377.0
+offset_bottom = -117.0
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[center]Are you sure?"
+
+[node name="No" type="Button" parent="Menu/Sprite2D"]
+offset_left = -400.0
+offset_right = 3696.0
+offset_bottom = 1024.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 500
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x7bd2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rdx6v")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l54fa")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_yvevf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xa0f0")
+text = "NO"
+icon = ExtResource("1_7w0lv")
+icon_alignment = 1
+script = ExtResource("6_36yfq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Yes" type="Button" parent="Menu/Sprite2D"]
+offset_left = -400.0
+offset_top = 230.0
+offset_right = 3704.0
+offset_bottom = 1262.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 500
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x7bd2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rdx6v")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l54fa")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_yvevf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xa0f0")
+text = "YES"
+icon = ExtResource("1_7w0lv")
+icon_alignment = 1
+script = ExtResource("7_jug8k")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Menu/Back" to="Menu/Back" method="_back"]
+[connection signal="pressed" from="Menu/Done" to="Menu/Done" method="_on_pressed"]
+[connection signal="text_changed" from="Menu/TextEdit" to="Menu/TextEdit" method="_comments"]
+[connection signal="pressed" from="Menu/Sprite2D/No" to="Menu/Sprite2D/No" method="_on_pressed"]
+[connection signal="pressed" from="Menu/Sprite2D/Yes" to="Menu/Sprite2D/Yes" method="_on_pressed"]

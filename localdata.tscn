@@ -1,0 +1,182 @@
+[gd_scene load_steps=10 format=3 uid="uid://btxmly70rgjnm"]
+
+[ext_resource type="Script" path="res://LocalData.gd" id="1_4lv8x"]
+[ext_resource type="Texture2D" uid="uid://b1wcqldklbkjv" path="res://ProfileLabel.png" id="2_63k3f"]
+[ext_resource type="Texture2D" uid="uid://cfafj01gymle6" path="res://Button.png" id="2_t62o4"]
+[ext_resource type="Script" path="res://GoToMainMenu.gd" id="3_0duk6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pfrd8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8hsly"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u8v88"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ijllv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_82qyr"]
+
+[node name="localdata" type="Node2D"]
+script = ExtResource("1_4lv8x")
+
+[node name="Menu" type="Node2D" parent="."]
+
+[node name="Back" type="Button" parent="Menu"]
+offset_left = 380.0
+offset_top = 220.0
+offset_right = 4484.0
+offset_bottom = 1252.0
+scale = Vector2(0.08, 0.08)
+theme_override_font_sizes/font_size = 500
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pfrd8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8hsly")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u8v88")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ijllv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_82qyr")
+text = "Back"
+icon = ExtResource("2_t62o4")
+icon_alignment = 1
+script = ExtResource("3_0duk6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="RichTextLabel" parent="Menu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 85.0
+offset_right = 1080.0
+offset_bottom = 245.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[center]Local Data"
+scroll_active = false
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Menu"]
+offset_top = 349.0
+offset_right = 1080.0
+offset_bottom = 2399.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Team" type="Sprite2D" parent="Menu/ScrollContainer/VBoxContainer"]
+position = Vector2(540, 420)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_63k3f")
+
+[node name="Team Number" type="RichTextLabel" parent="Menu/ScrollContainer/VBoxContainer/Team"]
+offset_left = -1600.0
+offset_top = -1200.0
+offset_right = 1600.0
+offset_bottom = -600.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 350
+bbcode_enabled = true
+text = "[center]Team"
+scroll_active = false
+
+[node name="Point Average" type="RichTextLabel" parent="Menu/ScrollContainer/VBoxContainer/Team"]
+offset_left = -1600.0
+offset_top = -500.0
+offset_right = 1600.0
+offset_bottom = -100.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+text = "Point Average:"
+
+[node name="PAV" type="RichTextLabel" parent="Menu/ScrollContainer/VBoxContainer/Team"]
+offset_left = -1600.0
+offset_top = -500.0
+offset_right = 1600.0
+offset_bottom = -100.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+text = "[right]999"
+
+[node name="Deviation" type="RichTextLabel" parent="Menu/ScrollContainer/VBoxContainer/Team"]
+offset_left = -1600.0
+offset_top = -100.0
+offset_right = 1600.0
+offset_bottom = 300.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+text = "Deviation:"
+
+[node name="DV" type="RichTextLabel" parent="Menu/ScrollContainer/VBoxContainer/Team"]
+offset_left = -1600.0
+offset_top = -100.0
+offset_right = 1600.0
+offset_bottom = 300.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+text = "[right]999"
+
+[node name="Auto Spots" type="RichTextLabel" parent="Menu/ScrollContainer/VBoxContainer/Team"]
+offset_left = -1600.0
+offset_top = 300.0
+offset_right = 1600.0
+offset_bottom = 700.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+text = "Auto Spots:"
+
+[node name="ASV" type="RichTextLabel" parent="Menu/ScrollContainer/VBoxContainer/Team"]
+offset_left = -1600.0
+offset_top = 300.0
+offset_right = 1600.0
+offset_bottom = 700.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+text = "[right]L/C/R"
+
+[node name="Climb" type="RichTextLabel" parent="Menu/ScrollContainer/VBoxContainer/Team"]
+offset_left = -1600.0
+offset_top = 700.0
+offset_right = 1600.0
+offset_bottom = 1700.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+text = "Climb: 0%"
+
+[node name="Trap" type="RichTextLabel" parent="Menu/ScrollContainer/VBoxContainer/Team"]
+offset_left = -1600.0
+offset_top = 700.0
+offset_right = 1600.0
+offset_bottom = 1700.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+text = "[right]Trap: 3"
+
+[node name="Ranking" type="RichTextLabel" parent="Menu/ScrollContainer/VBoxContainer/Team"]
+offset_left = -1600.0
+offset_top = -1200.0
+offset_right = 1600.0
+offset_bottom = -600.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 200
+bbcode_enabled = true
+text = "#0"
+scroll_active = false
+
+[node name="Sample" type="RichTextLabel" parent="Menu/ScrollContainer/VBoxContainer/Team"]
+offset_left = -1600.0
+offset_top = -1200.0
+offset_right = 1600.0
+offset_bottom = -600.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 200
+bbcode_enabled = true
+text = "[right]0"
+scroll_active = false
+
+[connection signal="pressed" from="Menu/Back" to="Menu/Back" method="_on_pressed"]
